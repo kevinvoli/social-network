@@ -1,0 +1,29 @@
+.menu,.menu ul{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    line-height: 2em;
+}
+
+.menu a{
+    color: #111;
+    border: 1px solid #333;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 250px;
+}
+
+.menu a:hove{
+    background-color: #6BF;
+}
+.menu li{
+    list-style-type: none;
+    position: relative;
+    float: left;
+}
+menu ul {
+    line-height: 1.7em;
+    position:absolute;
+    display: none;
+}
