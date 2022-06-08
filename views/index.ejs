@@ -1,134 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
   <% include ./partials/head%>
+</head>
 <body>
-  <header class="header">
-    <div class="logo">
-      <h1>
-        <a href="/"> whatscool.js
-        </a>
-      </h1>
-    </div>
-    <div class="formulairs">
-      <%if(typeof(utilisateur)!=="undefined"){%>
-        <p style="margin: 10px;">
-        <a href='<%=utilisateur.image%>'><img class='image' src='<%=utilisateur.image%>' alt=''></a>
-      </p>
-        <p style="margin: 10px;"><%=utilisateur.nom%></p>
-      <%}else{%>
-        <% include ./partials/formulair1%>
-        <% include ./partials/formulair2%>
-      <%}%>
-    </div>
-    </header>
-<div class="contenue main" >
-  <aside class="aside">
+  <div class="main">
+    <aside class="aside">
     <!-- <div class="contecter" > -->
-      <div class="info card-header-avatar">
+    <div class="info card-header-avatar">
         <a href='/images/18.jpg' class="card-avatar" ><img class='image' src='/public/images/18.jpg' alt=''></a>
-         <div class="card-title"> Mon nom</div>
+        <div class="card-title"> Mon nom</div>
       <div class="card-time">Il y a 10 minutes</div>
       <!-- </div> -->
     </div> 
-  </aside>
-  <article class="article">
-    <div class="discutions" >
+    </aside>
+    <section class="master">
+      <div class="nav">
+
+      </div>
       <div class="post" >
         
-          <% messages.forEach(function(message){ %>
-         <div class='discution '>
-          <header class="info card-header-avatar">
-                  <a href='<%=message.Users.image%>' class="card-avatar" ><img class='image' src='<%=message.Users.image%>' alt=''>
-                  </a>
-              <div class="card-title">'<%=message.Users.nom%>'</div>
-              <div class="card-time">Il y <%=message.Date%></div>
-            </header>
-            <div class="card-body">
-              <p ><%= message.message%></p>
-            </div>
-            <footer class="card-footer">
-              <div class="card-like">120 like</div>
-              <div id="<%= message._id%>" class="card-comments come "  > 12 commentaires </div>
-            </footer>
-            <div class="commentaire affiche" >
-                <div class='comment '>
-                    <header class="info-reponse card-header-avatar">
-                            <a href='/images/18.jpg' class="comment-avatar" ><img class='image' src='/public/images/18.jpg' alt=''>
-                            </a>
-                            <div class="centre">
-                                <div class="comment-title"> Ma Reponse</div>
-                                <div class="comment-time"><%=message.Date%></div>
-                              <div class="card-body">
-                                <p >frezehevgefhufevglfeuh</p>
-                              </div>
-                            </div>
-                   </header>
-                      <footer class="card-footer">
-                        <div class="card-like">120 like</div>
-                        <div  class="card-comments"> 12 commentaires </div>
-                      </footer>
-                  </div>
+        <% messages.forEach(function(message){ %>
+       <div class='discution '>
+        <header class="info card-header-avatar">
+                <a href='<%=message.Users.image%>' class="card-avatar" ><img class='image' src='<%=message.Users.image%>' alt=''>
+                </a>
+            <div class="card-title">'<%=message.Users.nom%>'</div>
+            <div class="card-time">Il y <%=message.Date%></div>
+          </header>
+          <div class="card-body">
+            <p ><%= message.message%></p>
+          </div>
+          <footer class="card-footer">
+            <div class="card-like">120 like</div>
+            <div id="<%= message._id%>" class="card-comments come "  > 12 commentaires </div>
+          </footer>
+          <div class="commentaire affiche" >
               <div class='comment '>
-                <header class="info-reponse card-header-avatar">
-                        <a href='/images/18.jpg' class="comment-avatar" ><img class='image' src='/public/images/18.jpg' alt=''>
-                        </a>
-                        <div class="centre">
-                            <div class="comment-title"> Ma Reponse</div>
-                            <div class="comment-time">Il y a 10 minutes</div>
-                          <div class="card-body">
-                            <p >frezehevgefhufevglfeuh</p>
+                  <header class="info-reponse card-header-avatar">
+                          <a href='/images/18.jpg' class="comment-avatar" ><img class='image' src='/public/images/18.jpg' alt=''>
+                          </a>
+                          <div class="centre">
+                              <div class="comment-title"> Ma Reponse</div>
+                              <div class="comment-time"><%=message.Date%></div>
+                            <div class="card-body">
+                              <p >frezehevgefhufevglfeuh</p>
+                            </div>
                           </div>
+                 </header>
+                    <footer class="card-footer">
+                      <div class="card-like">120 like</div>
+                      <div  class="card-comments"> 12 commentaires </div>
+                    </footer>
+                </div>
+            <div class='comment '>
+              <header class="info-reponse card-header-avatar">
+                      <a href='/images/18.jpg' class="comment-avatar" ><img class='image' src='/public/images/18.jpg' alt=''>
+                      </a>
+                      <div class="centre">
+                          <div clas7s="comment-title"> Ma Reponse</div>
+                          <div class="comment-time">Il y a 10 minutes</div>
+                        <div class="card-body">
+                          <p >frezehevgefhufevglfeuh</p>
                         </div>
-               </header>
-                  <footer class="card-footer">
-                    <div class="card-like">120 like</div>
-                    <div class="card-comments"> 12 commentaires </div>
-                  </footer>
-              </div>
-                 
-              <div class="  ">
-                <form  method="post" class="formulaire affiche">
-                    <input type="text" id="orangeForm-name" class="form-control validate" name="reponse">
-                    <input class=" formId" type="hidden" value="3" name="formId" id="form32" class="form-control validate" name="number">
-                    <input class="messageId" type="hidden"  name="id" id="form32" class="form-control validate" name="number" value="<%=message._id%>">
-                    <button type="submit " class="evoiye" ><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>       
+                      </div>
+             </header>
+                <footer class="card-footer">
+                  <div class="card-like">120 like</div>
+                  <div class="card-comments"> 12 commentaires </div>
+                </footer>
             </div>
-        </div>
-        <% });%>
-       
-
-      </div>
-      <div>
-          <div class="">
-              <form  method="post" class=" form   ">
-                  <input type="text" id="orangeForm-name" class="form-control validate" name="messages">
-                  <input class=" formId" type="hidden" value="4" name="formId" id="form32" class="form-control validate" name="number">
+               
+            <div class="  ">
+              <form  method="post" class="formulaire affiche">
+                  <input type="text" id="orangeForm-name" class="form-control validate" name="reponse">
+                  <input class=" formId" type="hidden" value="3" name="formId" id="form32" class="form-control validate" name="number">
+                  <input class="messageId" type="hidden"  name="id" id="form32" class="form-control validate" name="number" value="<%=message._id%>">
                   <button type="submit " class="evoiye" ><i class="fas fa-paper-plane"></i></button>
               </form>
+          </div>       
           </div>
-          
       </div>
-    </div>
-    
-    
-  </article>
-  <aside class="aside">
-    <!-- <div class="contecter" > -->
-      <div class="info card-header-avatar">
-        <a href='/images/18.jpg' class="card-avatar" ><img class='image' src='/public/images/18.jpg' alt=''></a>
-         <div class="card-title"> Mon nom</div>
-      <div class="card-time">Il y a 10 minutes</div>
-      <!-- </div> -->
-    </div> 
-  </aside>
+      <% });%>
+     
 
-</div>
-<script src="/js/jquery-3.4.1.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/mdb.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/javascripts/index.js"></script>
+    </div>
+        <div class="container-envoir">
+          <form action="">
+            <input type="text" class="message">
+            <input type="submit" class="submit" value="submit">
+          </form>
+      </div>
+    </section>
+  </div>
 </body>
 </html>

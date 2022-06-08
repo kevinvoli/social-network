@@ -1,20 +1,102 @@
-*{
+body, *{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-.header{
-  display: flex;  
-  height: 90px;
-  flex-flow: row wrap;
-  background-color: rgb(2, 2, 2);
-  width:100%;
-  color: white;
-  justify-content: space-between;
+.main{
+  width: calc(100% - 200px);
+  height: 100vh;
+  background-color: aliceblue;
+  margin: 0px auto;
+  position: relative;
 }
-.logo{
-  width: 40%;
-  color: white;
+
+.aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: aliceblue;
+  width: 350px;
+  height: 100vh;
+  border-right: 1px solid #1084a7;
+  display: flex;
+  flex-flow: column wrap;
+  font-size: 12px;
 }
+
+.master{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 350px);
+  height: 100vh;
+}
+
+.master .nav{
+  position: absolute;
+  top: O;
+  width: 100%;
+  height: 60px;
+  background-color: #0c4e62;
+}
+
+.master .container-envoir{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #0c4e62;
+}
+
+.master .message{
+  width: calc(100% - 100px);
+}
+
+.master .submit{
+  width: 100px;
+  background-color: #0c4e62;
+  border: none;
+}
+
+
+
+.master form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.aside .info{
+  display: block;
+  position: sticky;
+  margin-bottom: 10px;
+}
+.aside .info::before{
+  content: '';
+ 
+}
+
+.aside .info.active{
+  color: black;
+}
+
+.card-avatar{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+.image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+ 
+}
+
+
+/* 
 
 .formulairs{
   display: flex;
@@ -32,34 +114,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
-
-}
-.main{
-  margin-bottom: 20px;
 }
 
-.aside{
-  display: flex;
-  flex-flow: column wrap;
-  font-size: 12px;
-  background-color: #DBDBDB;
-}
-.aside .info{
-  display: block;
-  background-color: #FFF;
-  position: sticky;
-  margin-bottom: 10px;
-}
 
-.aside .info::before{
-  content: '';
- 
-}
-
-.aside .info.active{
-  color: black;
-}
 .article{
   width: 60%;
   display: flex;
@@ -208,7 +265,7 @@
 }
 /* .message.Reponse{
   display: none;
-} */
+} 
 
 .afficheForm{
   display: block;
@@ -232,20 +289,4 @@
   color: rgb(18, 18, 236);
 }
 
-
-
-
-@media only screen and (min-width:1050px){
-  .main{
-    display: flex;
-  }
-  .aside{
-    flex: none;
-    width: 250px;
-  }
-  .article{
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 100%;
-  }
-}
+*/

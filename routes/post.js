@@ -18,21 +18,7 @@ router.post('/',async(req,res,next)=>{
     if (req.body.formId==="1") {
       console.log(req.body)
       
-      let utilisateur= await models.User.findOne({nom:req.body.nom,password:req.body.password},(err,obj)=>{
-        return obj
-      })
-      console.log(utilisateur)
-      if (utilisateur===null) {
-        console.log("pas d'utilisateur")
-        res.redirect('/')
-      } else {
-        console.log(req.session)
-
-        req.session.user=utilisateur
-        req.session.token= jwtUtils.generateTokenUser(utilisateur._id)
-        user=req.session.user
-         return res.redirect('/')
-      }
+    
     } else if (req.body.formId==="3") {
       console.log(req.body.formId)
       if (req.session.user===undefined){

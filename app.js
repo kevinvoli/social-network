@@ -44,6 +44,8 @@ console.log(users)
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users')
 let usersPostRouter = require('./routes/post')
+let ConnectionRouter= require('./routes/connection')
+let InscriptionRouter = require('./routes/inscription')
 let app = express();
 
 
@@ -69,9 +71,15 @@ app.use(session({
   cookie:{secure:false}
 }))
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/', usersPostRouter)
+
+app.use('/', usersRouter);
+app.use('/connection', ConnectionRouter)
+app.use('/inscription',InscriptionRouter)
+app.use('/users', indexRouter);
+
+app.use('/ss', usersPostRouter)
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
