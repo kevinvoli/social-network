@@ -78,7 +78,7 @@ form input[type="password"]:focus {
     box-shadow: 4px 4px 60px rgba(0,0,0,.2);
 }
 
-form input[type="button"]{
+form input[type="submit"]{
     cursor: pointer;
     margin-top: 10px;
     font-size: 1rem;
